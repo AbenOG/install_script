@@ -118,7 +118,7 @@ pip install protonup # Installs protonUP
 echo "export PATH=$PATH:~/.local/bin" >> .bashrc
 source .bashrc
 mkdir "/home/$USER/.local/share/Steam/compatibilitytools.d/"
-protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # Sets the location on where to install proton
+protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # Sets the location on where to install proton, change this if you want to install it on a different dir
 
 # This fixes the "command not found" error when typing protonup.
 echo 'if [ -d "$HOME/.local/bin" ] ; then
