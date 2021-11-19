@@ -16,7 +16,6 @@ What does it do?
 # 3. The following software/driver & utils are installed .. (
     
     1. Mesa - https://mesa3d.org/
-    2. Xorg (X Window System display server) - https://www.x.org/wiki/
     2. OpenCL libs for MESA
     3. OpenGL libs for MESA
     4. Pavucontrol (for audio controlling) - https://freedesktop.org/software/pulseaudio/pavucontrol/
@@ -44,6 +43,8 @@ What does it do?
     26. Gaming mode & Gaming optimizations by Chris Titus - https://www.youtube.com/watch?v=xvrft9ULvho , https://www.christitus.com/ultimate-linux-gaming-guide/,
     27. Glorious-Eggroll Proton configuration - https://github.com/GloriousEggroll
     28. Protonup (Steam proton update utility)(Python) - https://pypi.org/project/protonup/
+    29. Xorg (X Window System display server) - https://www.x.org/wiki/
+    30. Brave (Chromium based privacy browser) - https://brave.com/
 )
 
 # 4. Then proceeds to reboot your system to finalize the installation. 
