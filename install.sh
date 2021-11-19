@@ -13,12 +13,6 @@
 sudo pacman -Syu --noconfirm # Install updates first..
 sudo pacman -S yay --noconfirm # Then we install yay AUR helper this will be needed for later use..
 
-# Some standard drivers in-case you encounter an issue with video drivers on a DE
-sudo pacman -S xf86-video-vesa xf86-video-fbdev xf86-video-intel
-
-# Xorg
-sudo pacman -S xorg
-
 # Desktop environment prompt
 # You can choose whether or not you want to install a DE (if none present)
 # 1 = Install DE
@@ -40,18 +34,19 @@ then
 	if [ $de -eq 1 ]
 	then
 		printf "\nInstalling Gnome Desktop...\n" # Installs GNOME 
-		sudo pacman -S gnome
-	
+		sudo pacman -S gnome xorg xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
+		sudo systemctl enable gdm.service
+	 
 	
 	elif [ $de -eq 2 ]
 	then
-		printf "\nInstalling KDE Desktop...\n" # Installs KDE
-		sudo pacman -S plasma kde-applications plasma-wayland-session plasma-wayland-protocols 
-	
+		printf "\nInstalling Plasma Desktop...\n" # Installs KDE
+		sudo pacman -S plasma kde-applications plasma-wayland-session plasma-wayland-protocols xorg xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
+		sudo systemctl enable sddm.service
 	elif [ $de -eq 3 ]
 	then
 		printf "\nInstalling XFCE desktop...\n" # Installs XFCE4
-		sudo pacman -S xfce4
+		sudo pacman -S xfce4 xorg xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
 	
 	else
 		printf "\nReturning...\n"
@@ -83,15 +78,16 @@ sudo systemctl start plexmediaserver.service
 #Opening ports for Plex
 sudo ufw allow in 32400/tcp   ################################################################
 sudo ufw allow out 32400/tcp  # Allowing Plex to be accessed from outside of the local network
-sudo ufw allow in 32400/udp   
+sudo ufw allow in 32400/udp   # You can choose to disable this function through the plex GUI on localhost:32400/web
 sudo ufw allow out 32400/udp  ################################################################
 # Done opening the ports
 
 # Titus Ultimate gaming guide - ref -> https://www.christitus.com/ultimate-linux-gaming-guide/ ~ Credits to Chris Titus
+
 #Enable 32-bit libs
 sudo dpkg --add-architecture i386 
 
-# AMD drivers, I installed some of those before but there are some other packages that may be needed..
+# Some more AMD drivers
 sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader -y
 
 # Enabling ACO
