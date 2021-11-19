@@ -16,6 +16,7 @@ What does it do?
 # 3. The following software/driver & utils are installed .. (
     
     1. Mesa - https://mesa3d.org/
+    2. Xorg
     2. OpenCL libs for MESA
     3. OpenGL libs for MESA
     4. Pavucontrol (for audio controlling) - https://freedesktop.org/software/pulseaudio/pavucontrol/
