@@ -136,7 +136,7 @@ pulseaudio -k
 pulseaudio --start
 # Script end
 
-printf "\nSoftware Installation completed!\n\nIf anything failed to install, please try manually!\n\nPress enter to restart...\n\nOr ctrl+c to end"
+printf "\nSoftware Installation completed!\n\nIf anything failed to install, please try manually!\n\nPress enter to restart(Recommended)...\n\nOr ctrl+c to end"
 
 read x
 
