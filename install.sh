@@ -60,11 +60,11 @@ fi
 # Note that most bluetooth, mainstream drivers come pre-installed in most DE so if it's not installed in yours, just go ahead and add those too..
 
 # ~pacman ----------
-sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox plex-media-server python-pip ufw pulseaudio --noconfirm
+sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox python-pip ufw pulseaudio --noconfirm
 # ~pacman ----------
 
 # ~yay --------
-yay -S discord spotify sublime-text brave timeshift --noconfirm
+yay -S discord spotify sublime-text brave timeshift plex-media-server --noconfirm
 # ~yay --------
 
 # Enabling some services
