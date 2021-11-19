@@ -102,6 +102,7 @@ protonup
 # Now I will install the pulseaudio profile for my razer nari headset due to only outputing in MONO audio after fresh install..
 # Comment this out if you don't have Razer Nari headsets!
 
+cd
 sudo makedir git # I always create a GIT dir for practicality.
 cd git
 git clone https://github.com/denesb/razer-nari-pulseaudio-profile.git
