@@ -69,8 +69,8 @@ yay -S discord spotify sublime-text brave timeshift plex-media-server --noconfir
 
 # Enabling some services
 sudo systemctl enable ufw
-sudo systemctl start ufw
 sudo ufw enable
+sudo systemctl start ufw
 sudo systemctl enable plexmediaserver.service
 sudo systemctl start plexmediaserver.service
 # Done enabling the services
