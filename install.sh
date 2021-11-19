@@ -64,7 +64,7 @@ sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-me
 # ~pacman ----------
 
 # ~yay --------
-yay -S discord spotify sublime-text brave-bin timeshift plex-media-server --noconfirm 
+yay -S discord spotify sublime-text brave-bin timeshift plex-media-server --noconfirm --batchinstall
 # ~yay --------
 
 # Enabling some services
