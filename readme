@@ -45,6 +45,7 @@ What does it do?
     28. Protonup (Steam proton update utility)(Python) - https://pypi.org/project/protonup/
     29. Xorg (X Window System display server) - https://www.x.org/wiki/
     30. Brave (Chromium based privacy browser) - https://brave.com/
+    31. UFW (Firewall) - ?
 )
 
 # 4. Then proceeds to reboot your system to finalize the installation. 
