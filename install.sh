@@ -62,8 +62,26 @@ sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-me
 # ~pacman ----------
 
 # ~yay --------
-yay -S discord spotify sublime-text brave --noconfirm
+yay -S discord spotify sublime-text brave timeshift --noconfirm
 # ~yay --------
+
+# Now I will install the pulseaudio profile for my razer nari headset due to only outputing in MONO audio after fresh install..
+# Comment this out if you don't have Razer Nari headsets!
+
+sudo makedir git # I always create a GIT dir for practicality.
+cd git
+git clone https://github.com/denesb/razer-nari-pulseaudio-profile.git
+cd razer-nari-pulseaudio-profile
+
+# Script part that copies all the nescesary profiles and pastes into pulse-audio profiles.
+sudo cp razer-nari-input.conf /usr/share/pulseaudio/alsa-mixer/paths/
+sudo cp razer-nari-output-{game,chat}.conf /usr/share/pulseaudio/alsa-mixer/paths/
+sudo cp razer-nari-usb-audio.conf /usr/share/pulseaudio/alsa-mixer/profile-sets/
+sudo cp 91-pulseaudio-razer-nari.rules /lib/udev/rules.d/
+
+pulseaudio -k
+pulseaudio --start
+# Script end
 
 echo "\n\nSoftware Installation completed!\nIf anything failed to install, please try manually!\nPress enter to restart.."
 
