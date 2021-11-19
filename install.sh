@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -ex
-
 # This script is made for my own personal usage and own personal preferences..
 # You can freely modify and distribute according to your own likings and preferences
 # Feel free to dig in !!! Don't be a stranger ;)
