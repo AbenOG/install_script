@@ -21,38 +21,38 @@ sudo pacman -S yay --noconfirm # Then we install yay AUR helper this will be nee
 # Also for this script to work it's better you have "base-devel,base" packages installed already!
 # Just in-case you are using vanilla arch!
 
-print "Do you wish to install a Desktop Environment?\n1 = Yes\n2 = No"
+printf "Do you wish to install a Desktop Environment?\n1 = Yes\n2 = No"
 
 read de  # Reads your input, stores it into de var
 
 if [ $de -eq 1 ]
 then
-	print "Choose your DE\n1. Gnome\n2. KDE\n3. XFCE" # These are my favs if you want to add more you are more than free to do so.. (lazydev)
+	printf "Choose your DE\n1. Gnome\n2. KDE\n3. XFCE" # These are my favs if you want to add more you are more than free to do so.. (lazydev)
 	
 	read de # Reads user input again for DE choice
 
 	if [ $de -eq 1 ]
 	then
-		print "Installing Gnome Desktop...\n" # Installs GNOME 
+		printf "Installing Gnome Desktop...\n" # Installs GNOME 
 		sudo pacman -S gnome
 	
 	
 	elif [ $de -eq 2 ]
 	then
-		print "Installing KDE Desktop...\n" # Installs KDE
+		printf "Installing KDE Desktop...\n" # Installs KDE
 		sudo pacman -S plasma
 	
 	elif [ $de -eq 3 ]
 	then
-		print "Installing XFCE desktop...\n" # Installs XFCE4
+		printf "Installing XFCE desktop...\n" # Installs XFCE4
 		sudo pacman -S xfce4
 	
 	else
-		print "Returning...\n"
+		printf "Returning...\n"
 	fi
 
 else
-	print "Proceeding without DE installation"
+	printf "Proceeding without DE installation"
 fi
 
 # Now installing my needed software and some drivers, modify this according to your likings OR system..
@@ -119,7 +119,7 @@ pulseaudio -k
 pulseaudio --start
 # Script end
 
-print "\n\nSoftware Installation completed!\nIf anything failed to install, please try manually!\nPress enter to restart...\nOr ctrl+c to end"
+printf "\n\nSoftware Installation completed!\nIf anything failed to install, please try manually!\nPress enter to restart...\nOr ctrl+c to end"
 
 read x
 
