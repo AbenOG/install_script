@@ -58,12 +58,46 @@ fi
 # Note that most bluetooth, mainstream drivers come pre-installed in most DE so if it's not installed in yours, just go ahead and add those too..
 
 # ~pacman ----------
-sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox plex-media-server --noconfirm
+sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox plex-media-server python-pip --noconfirm
 # ~pacman ----------
 
 # ~yay --------
 yay -S discord spotify sublime-text brave timeshift --noconfirm
 # ~yay --------
+
+# Titus Ultimate gaming guide - ref -> https://www.christitus.com/ultimate-linux-gaming-guide/ ~ Credits to Chris Titus
+#Enable 32-bit libs
+sudo dpkg --add-architecture i386 
+
+# AMD drivers, I installed some of those before but there are some other packages that may be needed..
+sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader -y
+
+# Enabling ACO
+echo 'RADV_PERFTEST=aco' | sudo tee -a /etc/environment
+
+# Wine dependancies
+sudo pacman -S wine-staging giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader lutris -y
+
+# Esync enable
+ulimit -Hn
+
+# GameMode - No CPU Throttling
+# Arch - Dependancies
+pacman -S meson systemd git dbus -y
+cd
+cd git
+git clone https://github.com/FeralInteractive/gamemode.git
+cd gamemode
+./bootstrap.sh
+
+# Auto-Install Project: ProtonUP ~Installs the latest proton version directly into your steam dir! Easy!
+pip install protonup
+echo "export PATH=$PATH:~/.local/bin" >> .bashrc
+source .bashrc
+protonup
+
+# Doesn't automatically work for everyone, sometimes you will have to manually define your path/different path depending on where you installed steam.
+# But if you followed exactly my config it should work straight out of the box !!!
 
 # Now I will install the pulseaudio profile for my razer nari headset due to only outputing in MONO audio after fresh install..
 # Comment this out if you don't have Razer Nari headsets!
@@ -83,10 +117,10 @@ pulseaudio -k
 pulseaudio --start
 # Script end
 
-echo "\n\nSoftware Installation completed!\nIf anything failed to install, please try manually!\nPress enter to restart.."
+echo "\n\nSoftware Installation completed!\nIf anything failed to install, please try manually!\nPress enter to restart...\nOr ctrl+c to end"
 
 read x
 
 sudo reboot
 
-# end 
+# END 
