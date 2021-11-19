@@ -13,6 +13,12 @@
 sudo pacman -Syu --noconfirm # Install updates first..
 sudo pacman -S yay --noconfirm # Then we install yay AUR helper this will be needed for later use..
 
+# Some standard drivers in-case you encounter an issue with video drivers on a DE
+sudo pacman -S xf86-video-vesa xf86-video-fbdev xf86-video-intel
+
+# Xorg
+sudo pacman -S xorg
+
 # Desktop environment prompt
 # You can choose whether or not you want to install a DE (if none present)
 # 1 = Install DE
@@ -40,7 +46,7 @@ then
 	elif [ $de -eq 2 ]
 	then
 		printf "\nInstalling KDE Desktop...\n" # Installs KDE
-		sudo pacman -S plasma
+		sudo pacman -S plasma kde-applications plasma-wayland-session plasma-wayland-protocols 
 	
 	elif [ $de -eq 3 ]
 	then
@@ -59,7 +65,7 @@ fi
 # Note that most bluetooth, mainstream drivers come pre-installed in most DE so if it's not installed in yours, just go ahead and add those too..
 
 # ~pacman ----------
-sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox plex-media-server python-pip ufw --noconfirm
+sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox plex-media-server python-pip ufw pulseaudio --noconfirm
 # ~pacman ----------
 
 # ~yay --------
