@@ -121,7 +121,7 @@ protonup
 # Comment this out if you don't have Razer Nari headsets!
 
 cd
-sudo mkdir git # I always create a GIT dir for practicality.
+mkdir git # I always create a GIT dir for practicality.
 cd git
 git clone https://github.com/denesb/razer-nari-pulseaudio-profile.git
 cd razer-nari-pulseaudio-profile
