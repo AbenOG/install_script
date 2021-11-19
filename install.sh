@@ -111,11 +111,19 @@ cd gamemode
 
 # Auto-Install Project: ProtonUP ~Installs the latest proton version directly into your steam dir! Easy!
 pip install protonup # Installs protonUP
+
 echo "export PATH=$PATH:~/.local/bin" >> .bashrc
 source .bashrc
 mkdir "/home/$USER/.local/share/Steam/compatibilitytools.d/"
 protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # Sets the location on where to install proton
+
+# This fixes the "command not found" error when typing protonup.
+echo 'if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi' | sudo tee -a ~/.profile
+
 protonup
+# ProtonUP installation done!
 
 # Doesn't automatically work for everyone, sometimes you will have to manually define your path/different path depending on where you installed steam.
 # But if you followed exactly my config it should work straight out of the box !!!
