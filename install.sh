@@ -59,12 +59,27 @@ fi
 # Note that most bluetooth, mainstream drivers come pre-installed in most DE so if it's not installed in yours, just go ahead and add those too..
 
 # ~pacman ----------
-sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox plex-media-server python-pip --noconfirm
+sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden git kdenlive virtualbox plex-media-server python-pip ufw --noconfirm
 # ~pacman ----------
 
 # ~yay --------
 yay -S discord spotify sublime-text brave timeshift --noconfirm
 # ~yay --------
+
+# Enabling some services
+sudo systemctl enable ufw
+sudo systemctl start ufw
+sudo ufw enable
+sudo systemctl enable plexmediaserver.service
+sudo systemctl start plexmediaserver.service
+# Done enabling the services
+
+#Opening ports for Plex
+sudo ufw allow in 32400/tcp   ################################################################
+sudo ufw allow out 32400/tcp  # Allowing Plex to be accessed from outside of the local network
+sudo ufw allow in 32400/udp   
+sudo ufw allow out 32400/udp  ################################################################
+# Done opening the ports
 
 # Titus Ultimate gaming guide - ref -> https://www.christitus.com/ultimate-linux-gaming-guide/ ~ Credits to Chris Titus
 #Enable 32-bit libs
