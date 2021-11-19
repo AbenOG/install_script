@@ -21,7 +21,7 @@ sudo pacman -S yay --noconfirm # Then we install yay AUR helper this will be nee
 # Also for this script to work it's better you have "base-devel,base" packages installed already!
 # Just in-case you are using vanilla arch!
 
-print "Do you wish to install a Desktop Environment?\n1: Yes\n2: No"
+print "Do you wish to install a Desktop Environment?\n1 = Yes\n2 = No"
 
 read de  # Reads your input, stores it into de var
 
