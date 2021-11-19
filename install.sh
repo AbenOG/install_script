@@ -110,6 +110,9 @@ cd gamemode
 ./bootstrap.sh
 
 # Auto-Install Project: ProtonUP ~Installs the latest proton version directly into your steam dir! Easy!
+# Doesn't automatically work for everyone, sometimes you will have to manually define your path/different path depending on where you installed steam.
+# But if you followed exactly my config it should work straight out of the box !!!
+
 pip install protonup # Installs protonUP
 
 echo "export PATH=$PATH:~/.local/bin" >> .bashrc
@@ -119,14 +122,11 @@ protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # Sets the lo
 
 # This fixes the "command not found" error when typing protonup.
 echo 'if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"		
 fi' | sudo tee -a ~/.profile
 
 protonup
 # ProtonUP installation done!
-
-# Doesn't automatically work for everyone, sometimes you will have to manually define your path/different path depending on where you installed steam.
-# But if you followed exactly my config it should work straight out of the box !!!
 
 # Now I will install the pulseaudio profile for my razer nari headset due to only outputing in MONO audio after fresh install..
 # Comment this out if you don't have Razer Nari headsets!
