@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # This script is made for my own personal usage and own personal preferences..
 # You can freely modify and distribute according to your own likings and preferences
@@ -20,38 +21,38 @@ sudo pacman -S yay --noconfirm # Then we install yay AUR helper this will be nee
 # Also for this script to work it's better you have "base-devel,base" packages installed already!
 # Just in-case you are using vanilla arch!
 
-echo "Do you wish to install a Desktop Environment?\n1: Yes\n2: No"
+print "Do you wish to install a Desktop Environment?\n1: Yes\n2: No"
 
 read de  # Reads your input, stores it into de var
 
 if [ $de -eq 1 ]
 then
-	echo "Choose your DE\n1. Gnome\n2. KDE\n3. XFCE" # These are my favs if you want to add more you are more than free to do so.. (lazydev)
+	print "Choose your DE\n1. Gnome\n2. KDE\n3. XFCE" # These are my favs if you want to add more you are more than free to do so.. (lazydev)
 	
 	read de # Reads user input again for DE choice
 
 	if [ $de -eq 1 ]
 	then
-		echo "Installing Gnome Desktop...\n" # Installs GNOME 
+		print "Installing Gnome Desktop...\n" # Installs GNOME 
 		sudo pacman -S gnome
 	
 	
 	elif [ $de -eq 2 ]
 	then
-		echo "Installing KDE Desktop...\n" # Installs KDE
+		print "Installing KDE Desktop...\n" # Installs KDE
 		sudo pacman -S plasma
 	
 	elif [ $de -eq 3 ]
 	then
-		echo "Installing XFCE desktop...\n" # Installs XFCE4
+		print "Installing XFCE desktop...\n" # Installs XFCE4
 		sudo pacman -S xfce4
 	
 	else
-		echo "Returning...\n"
+		print "Returning...\n"
 	fi
 
 else
-	echo "Proceeding without DE installation"
+	print "Proceeding without DE installation"
 fi
 
 # Now installing my needed software and some drivers, modify this according to your likings OR system..
@@ -118,7 +119,7 @@ pulseaudio -k
 pulseaudio --start
 # Script end
 
-echo "\n\nSoftware Installation completed!\nIf anything failed to install, please try manually!\nPress enter to restart...\nOr ctrl+c to end"
+print "\n\nSoftware Installation completed!\nIf anything failed to install, please try manually!\nPress enter to restart...\nOr ctrl+c to end"
 
 read x
 
