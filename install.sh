@@ -64,7 +64,7 @@ sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-me
 # ~pacman ----------
 
 # ~yay --------
-yay -S discord spotify sublime-text brave timeshift plex-media-server --noconfirm
+yay -S discord --noconfirm && yay -S spotify --noconfirm && yay -S sublime-text --noconfirm && yay -S brave --noconfirm && yay -S timeshift --noconfirm && yay -S plex-media-server --noconfirm 
 # ~yay --------
 
 # Enabling some services
