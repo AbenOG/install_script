@@ -33,19 +33,19 @@ then
 
 	if [ $de -eq 1 ]
 	then
-		printf "\nInstalling Gnome Desktop...\n" # Installs GNOME 
+		printf "\nInstalling Gnome Desktop...\n" # Installs GNOME DE
 		sudo pacman -S gnome xorg xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
 		sudo systemctl enable gdm.service
 	 
 	
 	elif [ $de -eq 2 ]
 	then
-		printf "\nInstalling Plasma Desktop...\n" # Installs KDE
+		printf "\nInstalling Plasma Desktop...\n" # Installs Plasma DE
 		sudo pacman -S plasma kde-applications plasma-wayland-session plasma-wayland-protocols xorg xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
 		sudo systemctl enable sddm.service
 	elif [ $de -eq 3 ]
 	then
-		printf "\nInstalling XFCE desktop...\n" # Installs XFCE4
+		printf "\nInstalling XFCE desktop...\n" # Installs XFCE4 DE
 		sudo pacman -S xfce4 xorg xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
 	
 	else
