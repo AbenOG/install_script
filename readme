@@ -1,0 +1,50 @@
+# This is my personal Arch post install script to install all of my fav software and needed drivers for MY system.
+
+# My system specs
+--
+# CPU: i5 - 8600k
+# Mem: 24GB Corsair LPX
+# Mobo: Asrock Z370 Extreme4
+# GPU: AMD Rx480 8GB
+--
+# IF your specs are similar to mine, or you are running an AMD GPU (polaris architecture) this should work for you by 99% if not then you will have to modify a few # lines of code.. (if you know what you're doing)
+
+What does it do? 
+
+# 1. Updates the system
+# 2. Installs YAY aur helper for later on use
+# 3. The following software/driver & utils are installed .. (
+    
+    1. Mesa - https://mesa3d.org/
+    2. OpenCL libs for MESA
+    3. OpenGL libs for MESA
+    4. Pavucontrol (for audio controlling) - https://freedesktop.org/software/pulseaudio/pavucontrol/
+    5. ntfs-3g (for NTFS read/write support) - https://wiki.archlinux.org/title/NTFS-3G
+    6. qbittorrent (torrent client) - https://www.qbittorrent.org/
+    7. Lutris (open gaming platform) - https://lutris.net
+    8. Python - https://www.python.org/
+    9. zsh (shell) ~ https://www.zsh.org/
+    10. Alacritty (terminal emulator) - https://alacritty.org/
+    11. OBS-Studio (Open Streaming & Recording platform) - https://obsproject.com/
+    12. gparted (partition editing platform) - https://gparted.org/
+    13. Steam (Gaming platform) - https://steampowered.com
+    14. Bitwarden (Open Password manager) - https://bitwarden.com
+    15. git - https://github.com
+    16. kdenlive (Libre video editor) - https://kdenlive.org/en/
+    17. Oracle VM VirtualBox (a free and open-source hosted hypervisor for x86 virtualization) - https://www.virtualbox.org/
+    18. plex-media-server (Multimedia streaming platform) - https://plex.tv
+    19. python-pip (Package installer for Python) - https://pypi.org/project/pip/
+    20. VLC (Open Media player) - https://www.videolan.org/vlc/
+    21. Spotify (Online music player) - https://spotify.com
+    22. Discord (VoIP, instant messaging and digital distribution platform) - https://discord.com
+    23. Sublime-text (Text editor) - https://sublimetext.com
+    24. Timeshift (back-up & restore util for Linux) - https://linuxmasterclub.com/timeshift/
+    25. Razer Nari drivers (Pulseaudio profile)(git) ~Credit Imustafin - https://github.com/imustafin/razer-nari-pulseaudio-profile
+    26. Gaming mode & Gaming optimizations by Chris Titus - https://www.youtube.com/watch?v=xvrft9ULvho , https://www.christitus.com/ultimate-linux-gaming-guide/,
+    27. Glorious-Eggroll Proton configuration - https://github.com/GloriousEggroll
+    28. Protonup (Steam proton update utility)(Python) - https://pypi.org/project/protonup/
+)
+
+# 4. Then proceeds to reboot your system to finalize the installation. 
+
+# You are more than welcome to dig in and contribute to this project, don't be a stranger!
