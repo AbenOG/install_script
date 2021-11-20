@@ -86,7 +86,7 @@ toInstall_yay=()
 
 for package_pacman in "${software_list_pacman[@]}"; {
 	
-	if [ "pacman -Qs $package_pacman" > /dev/null ]
+	if pacman -Qs $package_pacman > /dev/null
 	then
   		echo "The package $package_pacman is already installed"
 	else
@@ -96,7 +96,7 @@ for package_pacman in "${software_list_pacman[@]}"; {
 }
 for package_yay in "${software_list_yay[@]}"; {
 	
-	if [ "pacman -Qs $package_yay" > /dev/null ]
+	if pacman -Qs $package_yay > /dev/null
 	then
   		echo "The package $package_yay is already installed"
 	else
@@ -120,7 +120,7 @@ else
 fi
 
 # Enabling some services
-if [ "pacman -Qs ufw" > /dev/null ]
+if pacman -Qs ufw > /dev/null # Checks if UFW exists
 then
     sudo systemctl enable ufw
     sudo ufw enable
@@ -128,7 +128,8 @@ then
 else
     echo "ufw is not installed.. skipping"
 fi
-if [ "pacman -Qs plex-media-server" > /dev/null ]
+
+if pacman -Qs plex-media-server > /dev/null # Checks if plex exists
 then  
     sudo systemctl enable plexmediaserver.service
     sudo systemctl start plexmediaserver.service
@@ -138,7 +139,7 @@ fi
 # Done enabling the services
 
 #Opening ports for Plex
-if [ "systemctl is-enabled ufw.service"=='enabled' ]
+if [ "systemctl is-enabled ufw.service"=='enabled' ] # If the service isn't enabled means something went wrong before so skipping if not.
 then
     sudo ufw allow in 32400/tcp   ################################################################
     sudo ufw allow out 32400/tcp  # Allowing Plex to be accessed from outside of the local network
@@ -158,20 +159,32 @@ ulimit -Hn
 
 # GameMode - No CPU Throttling
 # Arch - Dependancies
-cd
-cd git
-git clone https://github.com/FeralInteractive/gamemode.git
-cd gamemode
-./bootstrap.sh
+if [ ! -d /usr/share/gamemode ] # Checks for existing gamemode installation
+then
+    cd
+    cd git
+    if [ ! -d gamemode ] 
+    then
+        git clone https://github.com/FeralInteractive/gamemode.git
+	cd gamemode
+	./bootstrap.sh
+    else
+    	echo "A folder with the name 'gamemode' already exists, continuing without Git cloning.."
+        cd gamemode
+	./bootstrap.sh
+    fi
+else
+    echo "GameMode is already installed in your system, skipping.."
+fi
 
 # Auto-Install Project: ProtonUP ~Installs the latest proton version directly into your steam dir! Easy!
 # Doesn't automatically work for everyone, sometimes you will have to manually define your path/different path depending on where you installed steam.
 # But if you followed exactly my config it should work straight out of the box !!!
-if [ "sudo pacman -Qs protonup" ] > /dev/null
+if [ -d "/home/$USER/.local/bin/protonup" ]
 then
-    echo "ProtonUP already installed"
+    echo "Protonup is already installed"
 else
-    pip install protonup # Installs protonUP
+    pip install protonup # Installs protonup
 fi
 
 echo "export PATH=$PATH:~/.local/bin" >> .bashrc
@@ -228,4 +241,4 @@ read x
 
 sudo reboot
 
-# END 
+# END
