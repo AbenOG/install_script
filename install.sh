@@ -13,15 +13,21 @@
 sudo pacman -Syu --noconfirm # Install updates first..
 
 # Installing YAY AUR Helper for later use.
-sudo pacman -S git --noconfirm
-cd
-mkdir git
-cd git
-(
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-)
+if pacman -Qs yay > /dev/null
+then
+  echo "Yay is already installed.. Skipping"
+else
+  sudo pacman -S git --noconfirm
+  cd
+  mkdir git
+  cd git
+  (
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  )
+fi
+
 
 # Desktop environment prompt
 # You can choose whether or not you want to install a DE (if none present)
