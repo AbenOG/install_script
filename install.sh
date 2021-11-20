@@ -114,7 +114,7 @@ fi
 
 if [ ! "${toInstall_yay[@]}" ]
 then
-	printf "\nAll Yay packages already installed.."
+	printf "\nAll Yay packages already installed..\n"
 else
 	yay -S "${toInstall_yay[@]}" --noconfirm
 fi
@@ -126,7 +126,7 @@ then
     sudo ufw enable
     sudo systemctl start ufw
 else
-    echo "ufw is not installed.. skipping"
+    printf "ufw is not installed.. skipping"
 fi
 
 if pacman -Qs plex-media-server > /dev/null # Checks if plex exists
@@ -134,7 +134,7 @@ then
     sudo systemctl enable plexmediaserver.service
     sudo systemctl start plexmediaserver.service
 else
-    echo "Plex media server is not installed.. skipping"
+    printf "Plex media server is not installed.. skipping\n"
 fi
 # Done enabling the services
 
@@ -146,7 +146,7 @@ then
     sudo ufw allow in 32400/udp   # You can choose to disable this function through the plex GUI on localhost:32400/web
     sudo ufw allow out 32400/udp  ################################################################
 else
-    echo "ufw is not enabled skipping"
+    printf "ufw is not enabled skipping\n"
 fi
 # Done opening the ports
 
@@ -169,12 +169,12 @@ then
 	cd gamemode
 	./bootstrap.sh
     else
-    	echo "A folder with the name 'gamemode' already exists, continuing without Git cloning.."
+    	printf "A folder with the name 'gamemode' already exists, continuing without Git cloning..\n"
         cd gamemode
 	./bootstrap.sh
     fi
 else
-    echo "GameMode is already installed in your system, skipping.."
+    printf "GameMode is already installed in your system, skipping..\n"
 fi
 
 # Auto-Install Project: ProtonUP ~Installs the latest proton version directly into your steam dir! Easy!
@@ -230,7 +230,7 @@ then
 	pulseaudio -k
 	pulseaudio --start
 else
-	printf 'Incorrect sound server OR configuration detected for this operation, please consider doing this manually..'
+	printf 'Incorrect sound server OR configuration detected for this operation, please consider doing this manually..\n'
 fi
 
 # Script end
