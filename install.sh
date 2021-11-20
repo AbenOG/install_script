@@ -120,18 +120,32 @@ else
 fi
 
 # Enabling some services
-sudo systemctl enable ufw
-sudo ufw enable
-sudo systemctl start ufw
-sudo systemctl enable plexmediaserver.service
-sudo systemctl start plexmediaserver.service
+if [ pacman -Qs ufw > /dev/null ]
+then
+    sudo systemctl enable ufw
+    sudo ufw enable
+    sudo systemctl start ufw
+else
+    echo "ufw is not installed.. skipping"
+fi
+if [ pacman -Qs plex-media-server > /dev/null ]
+then  
+    sudo systemctl enable plexmediaserver.service
+    sudo systemctl start plexmediaserver.service
+else
+    echo "Plex media server is not installed.. skipping"
 # Done enabling the services
 
 #Opening ports for Plex
-sudo ufw allow in 32400/tcp   ################################################################
-sudo ufw allow out 32400/tcp  # Allowing Plex to be accessed from outside of the local network
-sudo ufw allow in 32400/udp   # You can choose to disable this function through the plex GUI on localhost:32400/web
-sudo ufw allow out 32400/udp  ################################################################
+if [ systemctl is-enabled ufw.service=='enabled' ]
+then
+    sudo ufw allow in 32400/tcp   ################################################################
+    sudo ufw allow out 32400/tcp  # Allowing Plex to be accessed from outside of the local network
+    sudo ufw allow in 32400/udp   # You can choose to disable this function through the plex GUI on localhost:32400/web
+    sudo ufw allow out 32400/udp  ################################################################
+else
+    echo "ufw is not enabled skipping"
+fi
 # Done opening the ports
 
 # Titus Ultimate gaming guide - ref -> https://www.christitus.com/ultimate-linux-gaming-guide/ ~ Credits to Chris Titus
@@ -178,7 +192,7 @@ cd razer-nari-pulseaudio-profile
 
 # Script part that copies all the nescesary profiles and pastes into pulse-audio profiles.
 
-if [ "systemctl --user is-active pulseaudio.socket"=='active' ] 
+if [ "systemctl --user is-active pulseaudio.socket"=='active' ] && [ -d "/usr/share/pulseaudio/alsa-mixer/paths/" ] && [ -d "/usr/share/pulseaudio/alsa-mixer/profile-sets/" ] && [ -d "/lib/udev/rules.d/" ]
 then	
 	sudo cp razer-nari-input.conf /usr/share/pulseaudio/alsa-mixer/paths/
 	sudo cp razer-nari-output-{game,chat}.conf /usr/share/pulseaudio/alsa-mixer/paths/
@@ -187,11 +201,8 @@ then
 	
 	pulseaudio -k
 	pulseaudio --start
-elif [ "systemctl --user is-active pipewire.socket"=='active' ] 
-then
-	printf 'Pipewire detected, This operation requires Pulseaudio, skipping this for now..'
 else
-	printf 'No sound server detected.. skipping for now'
+	printf 'Incorrect sound server OR configuration detected for this operation, please consider doing this manually..'
 fi
 
 # Script end
