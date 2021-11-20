@@ -86,7 +86,7 @@ toInstall_yay=()
 
 for package_pacman in "${software_list_pacman[@]}"; {
 	
-	if pacman -Qs $package_pacman > /dev/null
+	if [ "pacman -Qs $package_pacman" > /dev/null ]
 	then
   		echo "The package $package_pacman is already installed"
 	else
@@ -96,7 +96,7 @@ for package_pacman in "${software_list_pacman[@]}"; {
 }
 for package_yay in "${software_list_yay[@]}"; {
 	
-	if pacman -Qs $package_yay > /dev/null
+	if [ "pacman -Qs $package_yay" > /dev/null ]
 	then
   		echo "The package $package_yay is already installed"
 	else
@@ -120,7 +120,7 @@ else
 fi
 
 # Enabling some services
-if [ pacman -Qs ufw > /dev/null ]
+if [ "pacman -Qs ufw" > /dev/null ]
 then
     sudo systemctl enable ufw
     sudo ufw enable
@@ -128,7 +128,7 @@ then
 else
     echo "ufw is not installed.. skipping"
 fi
-if [ pacman -Qs plex-media-server > /dev/null ]
+if [ "pacman -Qs plex-media-server" > /dev/null ]
 then  
     sudo systemctl enable plexmediaserver.service
     sudo systemctl start plexmediaserver.service
@@ -138,7 +138,7 @@ fi
 # Done enabling the services
 
 #Opening ports for Plex
-if [ systemctl is-enabled ufw.service=='enabled' ]
+if [ "systemctl is-enabled ufw.service"=='enabled' ]
 then
     sudo ufw allow in 32400/tcp   ################################################################
     sudo ufw allow out 32400/tcp  # Allowing Plex to be accessed from outside of the local network
