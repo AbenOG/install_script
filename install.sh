@@ -134,6 +134,7 @@ then
     sudo systemctl start plexmediaserver.service
 else
     echo "Plex media server is not installed.. skipping"
+fi
 # Done enabling the services
 
 #Opening ports for Plex
