@@ -186,13 +186,19 @@ protonup
 # Now I will install the pulseaudio profile for my razer nari headset due to only outputing in MONO audio after fresh install..
 # Comment this out if you don't have Razer Nari headsets!
 
-cd
-cd git
-git clone https://github.com/denesb/razer-nari-pulseaudio-profile.git
-cd razer-nari-pulseaudio-profile
-
+if [ ! -d "/home/$USER/git/razer-nari-pulseaudio-profile" ] # Let's check if folder exists first to avoid 'file-exists' error.
+then
+    cd
+    cd git
+    git clone https://github.com/denesb/razer-nari-pulseaudio-profile.git
+    cd razer-nari-pulseaudio-profile
+else
+    cd
+    cd git
+    cd razer-nari-pulseaudio-profile
+fi
+    
 # Script part that copies all the nescesary profiles and pastes into pulse-audio profiles.
-
 if [ "systemctl --user is-active pulseaudio.socket"=='active' ] && [ -d "/usr/share/pulseaudio/alsa-mixer/paths/" ] && [ -d "/usr/share/pulseaudio/alsa-mixer/profile-sets/" ] && [ -d "/lib/udev/rules.d/" ]
 then	
 	sudo cp razer-nari-input.conf /usr/share/pulseaudio/alsa-mixer/paths/
