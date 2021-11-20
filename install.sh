@@ -167,14 +167,22 @@ cd gamemode
 # Auto-Install Project: ProtonUP ~Installs the latest proton version directly into your steam dir! Easy!
 # Doesn't automatically work for everyone, sometimes you will have to manually define your path/different path depending on where you installed steam.
 # But if you followed exactly my config it should work straight out of the box !!!
-
-pip install protonup # Installs protonUP
+if [ "sudo pacman -Qs protonup" ] > /dev/null
+then
+    echo "ProtonUP already installed"
+else
+    pip install protonup # Installs protonUP
+fi
 
 echo "export PATH=$PATH:~/.local/bin" >> .bashrc
 source .bashrc
-mkdir "/home/$USER/.local/share/Steam/compatibilitytools.d/"
-protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # Sets the location on where to install proton, change this if you want to install it on a different dir
-
+if [ ! -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" ]
+then
+    mkdir "/home/$USER/.local/share/Steam/compatibilitytools.d/"
+    protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # This sets the download destination for GE-Proton when using 'protonup' command
+else
+    protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # This sets the download destination for GE-Proton when using 'protonup' command
+fi
 # This fixes the "command not found" error when typing protonup.
 echo 'if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"		
