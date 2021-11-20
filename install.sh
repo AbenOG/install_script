@@ -109,14 +109,18 @@ if [ ! "${toInstall_pac[@]}" ]
 then
 	printf "\nAll Pacman packages already installed.."
 else
+	(
 	sudo pacman -S "${toInstall_pac[@]}" --noconfirm
+	)
 fi
 
 if [ ! "${toInstall_yay[@]}" ]
 then
 	printf "\nAll Yay packages already installed.."
 else
+	(
 	yay -S "${toInstall_yay[@]}" --noconfirm
+	)
 fi
 
 # Enabling some services
