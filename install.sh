@@ -69,13 +69,44 @@ fi
 # Now installing my needed software and some drivers, modify this according to your likings OR system..
 # Note that most bluetooth, mainstream drivers come pre-installed in most DE so if it's not installed in yours, just go ahead and add those too..
 
-# ~pacman ----------
-sudo pacman -S mesa lib32-vulkan-radeon lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-mesa lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden kdenlive virtualbox python-pip ufw pulseaudio --noconfirm
-# ~pacman ----------
+software_list_pacman=(meson systemd git dbus lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader mesa lib32-vulkan-mesa-layers lib32-opencl-mesa lib32-mesa-vdpau lib32-glu vulkan-mesa-layers opencl-mesa alacritty glu qbittorrent python pavucontrol zsh ntfs-3g obs-studio vlc lutris gparted steam bitwarden kdenlive virtualbox python-pip ufw pulseaudio)
+software_list_yay=(discord spotify sublime-text brave-bin timeshift plex-media-server)
 
-# ~yay --------
-yay -S discord spotify sublime-text brave-bin timeshift plex-media-server --noconfirm --batchinstall
-# ~yay --------
+toInstall_pac=()
+toInstall_yay=()
+
+for package_pacman in "${software_list_pacman[@]}"; {
+	if pacman -Qs $package_pacman > /dev/null
+	then
+  		echo "The package $package_pacman is already installed"
+	else
+  		echo "The package $package_pacman is NOT installed"
+  		toInstall_pac+=("$package_pacman")
+	fi
+}
+	for package_yay in "${software_list_yay[@]}"; {
+	if pacman -Qs $package_yay > /dev/null
+	then
+  		echo "The package $package_yay is already installed"
+	else
+  		echo "The package $package_yay is NOT installed"
+  		toInstall_yay+=("$package_yay")
+	fi
+}
+
+if [ ! "${toInstall_pac[@]}" ]
+then
+	printf "\nAll Pacman packages already installed.."
+else
+	sudo pacman -S "${toInstall_pac[@]}" --noconfirm
+fi
+
+if [ ! "${toInstall_yay[@]}" ]
+then
+	printf "\nAll Yay packages already installed.."
+else
+	yay -S "${toInstall_yay[@]}" --noconfirm
+fi
 
 # Enabling some services
 sudo systemctl enable ufw
@@ -93,10 +124,6 @@ sudo ufw allow out 32400/udp  ##################################################
 # Done opening the ports
 
 # Titus Ultimate gaming guide - ref -> https://www.christitus.com/ultimate-linux-gaming-guide/ ~ Credits to Chris Titus
-
-# Some more AMD drivers
-sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader --noconfirm
-
 # Enabling ACO
 echo 'RADV_PERFTEST=aco' | sudo tee -a /etc/environment
 
@@ -108,7 +135,6 @@ ulimit -Hn
 
 # GameMode - No CPU Throttling
 # Arch - Dependancies
-pacman -S meson systemd git dbus -y
 cd
 cd git
 git clone https://github.com/FeralInteractive/gamemode.git
