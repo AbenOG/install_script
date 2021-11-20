@@ -84,9 +84,6 @@ sudo ufw allow out 32400/udp  ##################################################
 
 # Titus Ultimate gaming guide - ref -> https://www.christitus.com/ultimate-linux-gaming-guide/ ~ Credits to Chris Titus
 
-#Enable 32-bit libs
-sudo dpkg --add-architecture i386 
-
 # Some more AMD drivers
 sudo pacman -S lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader --noconfirm
 
