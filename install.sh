@@ -180,12 +180,13 @@ cd razer-nari-pulseaudio-profile
 
 if [ "systemctl --user is-active pulseaudio.socket"=='active' ] 
 then	
-	(
 	sudo cp razer-nari-input.conf /usr/share/pulseaudio/alsa-mixer/paths/
 	sudo cp razer-nari-output-{game,chat}.conf /usr/share/pulseaudio/alsa-mixer/paths/
 	sudo cp razer-nari-usb-audio.conf /usr/share/pulseaudio/alsa-mixer/profile-sets/
 	sudo cp 91-pulseaudio-razer-nari.rules /lib/udev/rules.d/
-	)
+	
+	pulseaudio -k
+	pulseaudio --start
 elif [ "systemctl --user is-active pipewire.socket"=='active' ] 
 then
 	printf 'Pipewire detected, This operation requires Pulseaudio, skipping this for now..'
@@ -193,8 +194,6 @@ else
 	printf 'No sound server detected.. skipping for now'
 fi
 
-pulseaudio -k
-pulseaudio --start
 # Script end
 
 printf "\nSoftware Installation completed!\n\nIf anything failed to install, please try manually!\n\nPress enter to restart(Recommended)...\n\nOr ctrl+c to end"
