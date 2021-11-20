@@ -17,9 +17,11 @@ sudo pacman -S git --noconfirm
 cd
 mkdir git
 cd git
+(
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+)
 
 # Desktop environment prompt
 # You can choose whether or not you want to install a DE (if none present)
