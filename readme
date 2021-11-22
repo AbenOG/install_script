@@ -37,17 +37,16 @@ What does it do?
     22. Discord (VoIP, instant messaging and digital distribution platform) - https://discord.com
     23. Sublime-text (Text editor) - https://sublimetext.com
     24. Timeshift (back-up & restore util for Linux) - https://linuxmasterclub.com/timeshift/
-    25. Razer Nari drivers (Pulseaudio profile)(git) ~Credit Imustafin - https://github.com/imustafin/razer-nari-pulseaudio-profile
-    26. Gaming mode & Gaming optimizations by Chris Titus - https://www.youtube.com/watch?v=xvrft9ULvho , https://www.christitus.com/ultimate-linux-gaming-guide/,
-    27. Glorious-Eggroll Proton configuration - https://github.com/GloriousEggroll
-    28. Protonup (Steam proton update utility)(Python) - https://pypi.org/project/protonup/
-    29. Xorg (X Window System display server) - https://www.x.org/wiki/
-    30. Brave (Chromium based privacy browser) - https://brave.com/
-    31. UFW (Firewall) - ?
-    32. Nano (GNU Text editor) - https://www.nano-editor.org/
-    33. Code (Microsoft Visual studio code) - https://code.visualstudio.com/
-    34. Gimp (GNU Image Manipulation Program) - https://www.gimp.org/
-    35. Atom (Free and open-source text and source code editor) - https://atom.io/
+    25. Gaming mode & Gaming optimizations by Chris Titus - https://www.youtube.com/watch?v=xvrft9ULvho , https://www.christitus.com/ultimate-linux-gaming-guide/,
+    26. Glorious-Eggroll Proton configuration - https://github.com/GloriousEggroll
+    27. Protonup (Steam proton update utility)(Python) - https://pypi.org/project/protonup/
+    28. Xorg (X Window System display server) - https://www.x.org/wiki/
+    29. Brave (Chromium based privacy browser) - https://brave.com/
+    30. UFW (Firewall) - ?
+    31. Nano (GNU Text editor) - https://www.nano-editor.org/
+    32. Code (Microsoft Visual studio code) - https://code.visualstudio.com/
+    33. Gimp (GNU Image Manipulation Program) - https://www.gimp.org/
+    34. Atom (Free and open-source text and source code editor) - https://atom.io/
 )
 
 # You can change the installation packages by editing the "install.sh" script file on < Line: 235 > for all pacman packages and < Line: 327 > for all yay packages
