@@ -1,18 +1,13 @@
-# This is my personal Arch post install script to install all of my fav software and needed drivers for MY system.
+# Hello and welcome!
 
-# My system specs
---
-# CPU: i5 - 8600k
-# Mem: 24GB Corsair LPX
-# Mobo: Asrock Z370 Extreme4
-# GPU: AMD Rx480 8GB
---
-# IF your specs are similar to mine, or you are running an AMD GPU (polaris architecture) this should work for you by 99% if not then you will have to modify a few # lines of code.. (if you know what you're doing)
+# Aben's Arch post installation script
+# Installs most common software and needed drivers so you are up and running with a single click!
+
 
 What does it do? 
 
 # 1. Updates the system
-# 2. Installs YAY aur helper for later on use
+# 2. Autodetects your GPU and installs the drivers necessary for your system.
 # 3. The following software/driver & utils are installed .. (
     
     1. Mesa - https://mesa3d.org/
@@ -46,8 +41,12 @@ What does it do?
     29. Xorg (X Window System display server) - https://www.x.org/wiki/
     30. Brave (Chromium based privacy browser) - https://brave.com/
     31. UFW (Firewall) - ?
+    32. Nano (GNU Text editor) - https://www.nano-editor.org/
+    33. Code (Microsoft Visual studio code) - https://code.visualstudio.com/
+    34. Gimp (GNU Image Manipulation Program) - https://www.gimp.org/
+    35. Atom (Free and open-source text and source code editor) - https://atom.io/
 )
 
-# 4. Then proceeds to reboot your system to finalize the installation. 
 
 # You are more than welcome to dig in and contribute to this project, don't be a stranger!
+# More features to come soon!
