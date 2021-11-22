@@ -64,25 +64,23 @@ install_driver () { # This function collects the GPU detection information gathe
         done
     fi
 
-    # Installs the needed drivers
-    printf "\nProceed with driver installation? (Y/N)\ninput: "
-    
-    read -r confirm
-    
+    # Makes sure there are drivers queued up before confirmation prompt
+    if [ ! "${queue[0]}" == '' ]
+    then
+    	printf "\nProceed with driver installation? (Y/N)\ninput: "
+	read -r confirm
+    else
+    	printf "\nAll drivers are already installed, skipping this part\n"
+    fi
+
+
     if [ "$confirm" == 'Y' ] || [ "$confirm" == 'y' ] || [ "$confirm" == 'Yes' ] || [ "$confirm" == 'yes' ] || [ "$confirm" == 'YES' ]
     then
-        if [ ! "${queue[0]}" == '' ]
-        then
-            # Installs the queued drivers
-            printf "\nInstalling %s GPU Drivers\n" "$1"
-            printf "\npackages queued -> %s" "${queue[@]}"
-        else
-            printf "\nAll drivers are already installed, skipping this part\n"
-        fi
-    
+        # Installs the queued drivers
+        printf "\nInstalling %s GPU Drivers\n" "$1"
+        printf "\npackages queued -> %s" "${queue[@]}"
     else
-        printf '\nContinuing without driver installation\n'
-    
+        printf "Skipping driver installation.."
     fi
 } #                             ==================================================== END OF FUNC ==================================================
 
