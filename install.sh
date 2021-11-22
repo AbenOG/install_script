@@ -467,7 +467,7 @@ protonup
 
 printf "\nScript Finished~\n\nIf anything failed to install, please try manually!\n\nPress enter to restart(Recommended)...\n\nOr close the window to end"
 
-read -r i
+read -r x
 
 sudo reboot
 
