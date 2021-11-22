@@ -2,7 +2,7 @@
 # ===================================================================================== NOTES =============================================================================================
 
 # BETA Release, this is not recommended to work on 100% of the systems out there perfectly out of the box!! make sure you know what you're doing before...
-# you modify the code..
+# you modify the code.
 
 # ================================================================================ DRIVER PACKAGES ========================================================================================
 
