@@ -9,8 +9,9 @@
 What does it do? 
 
 # 1. Updates the system
-# 2. Autodetects your GPU and installs the drivers necessary for your system.
-# 3. The following software/driver & utils are installed .. (
+# 2. (Optional) Installs the desktop environment of your choosing followed by all required packages.
+# 3. Autodetects your GPU and installs the drivers necessary for your system.
+# 4. The following software/driver & utils are installed .. (
     
     1. Mesa - https://mesa3d.org/
     2. OpenCL libs for MESA
@@ -48,6 +49,8 @@ What does it do?
     34. Gimp (GNU Image Manipulation Program) - https://www.gimp.org/
     35. Atom (Free and open-source text and source code editor) - https://atom.io/
 )
+
+# You can change the installation packages by editing the "install.sh" script file on < Line: 235 > for all pacman packages and < Line: 327 > for all yay packages
 
 
 # You are more than welcome to dig in and contribute to this project, don't be a stranger!
