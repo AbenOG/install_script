@@ -79,8 +79,6 @@ install_driver () { # This function collects the GPU detection information gathe
         # Installs the queued drivers
         printf "\nInstalling %s GPU Drivers\n" "$1"
         printf "\npackages queued -> %s" "${queue[@]}"
-    else
-        printf "Skipping driver installation.."
     fi
 } #                             ==================================================== END OF FUNC ==================================================
 
