@@ -21,7 +21,7 @@ GPU=''
 install_driver () { # This function collects the GPU detection information gathered in < line(s) 157+ > and installs the driver package accordingly
                     # I Highly advise against editing the code within the function unless you really know what you're doing, you're on your own!!
 
-    queue=() # This will queue the not-installed drivers and install them later
+    queue=() # This will queue the not-installed drivers and install them later.
 
     if [ "$1" == 'NVIDIA' ]
     then
