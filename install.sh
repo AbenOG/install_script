@@ -70,7 +70,7 @@ install_driver () { # This function collects the GPU detection information gathe
     	printf "\nProceed with driver installation? (Y/N)\ninput: "
 	read -r confirm
     else
-    	printf "\nAll drivers are already installed, skipping this part\n"
+    	printf "\nAll drivers are already installed, skipping this part\n\n"
     fi
 
 
