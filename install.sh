@@ -275,8 +275,6 @@ software_list_pacman=(xdg-desktop-portal
                       libpulse
                       lib32-libpulse
                       libgpg-error
-		              nmp
-		              node.js
 		              mujs
 		              webkit2gtk
 		              qt5-webchannel
