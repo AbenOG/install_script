@@ -259,6 +259,19 @@ software_list_pacman=(xdg-desktop-portal
                       libpulse
                       lib32-libpulse
                       libgpg-error
+		      nmp
+		      node.js
+		      mujs
+		      webkit2gtk
+		      qt5-webchannel
+		      qt5-declarative
+		      js78
+		      jre11-openjdk
+		      jre-openjdk-headless
+		      jdk11-openjdk
+		      java11-openjfx
+		      java-runtime-common
+		      java-environment-common
                       lib32-libgpg-error
                       alsa-plugins
                       lib32-alsa-plugins
