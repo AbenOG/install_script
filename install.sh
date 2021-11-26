@@ -335,6 +335,8 @@ software_list_pacman=(xdg-desktop-portal
                       atom
                       gimp
                       nano
+		      pulseaudio
+		      pavucontrol
                       )
 
 software_list_yay=(discord
