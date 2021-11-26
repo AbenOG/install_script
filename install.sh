@@ -275,9 +275,11 @@ software_list_pacman=(xdg-desktop-portal
                       libpulse
                       lib32-libpulse
                       libgpg-error
-		              mujs
-		              webkit2gtk
-		              qt5-webchannel
+		      nmp
+		      node.js
+		      mujs
+		      webkit2gtk
+		      qt5-webchannel
                       qt5-declarative
                       js78
                       jre11-openjdk
@@ -348,8 +350,8 @@ software_list_pacman=(xdg-desktop-portal
                       atom
                       gimp
                       nano
-		              pulseaudio
-		              pavucontrol
+		      pulseaudio
+		      pavucontrol
                       )
 
 software_list_yay=(discord
