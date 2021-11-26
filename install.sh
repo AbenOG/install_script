@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ===================================================================================== NOTES =============================================================================================
 
-# BETA Release, this is not recommended to work on 100% of the systems out there perfectly out of the box!! make sure you know what you're doing before...
+# BETA Release, this is not intended to work on 100% of the systems out there perfectly out of the box!! make sure you know what you're doing before...
 # you modify the code.
 
 # ================================================================================ DRIVER PACKAGES ========================================================================================
@@ -275,19 +275,19 @@ software_list_pacman=(xdg-desktop-portal
                       libpulse
                       lib32-libpulse
                       libgpg-error
-		      nmp
-		      node.js
-		      mujs
-		      webkit2gtk
-		      qt5-webchannel
-		      qt5-declarative
-		      js78
-		      jre11-openjdk
-		      jre-openjdk-headless
-		      jdk11-openjdk
-		      java11-openjfx
-		      java-runtime-common
-		      java-environment-common
+		              nmp
+		              node.js
+		              mujs
+		              webkit2gtk
+		              qt5-webchannel
+                      qt5-declarative
+                      js78
+                      jre11-openjdk
+                      jre-openjdk-headless
+                      jdk11-openjdk
+                      java11-openjfx
+                      java-runtime-common
+                      java-environment-common
                       lib32-libgpg-error
                       alsa-plugins
                       lib32-alsa-plugins
@@ -340,7 +340,6 @@ software_list_pacman=(xdg-desktop-portal
                       vlc
                       lutris
                       gparted
-                      steam
                       bitwarden
                       kdenlive
                       virtualbox
@@ -351,8 +350,8 @@ software_list_pacman=(xdg-desktop-portal
                       atom
                       gimp
                       nano
-		      pulseaudio
-		      pavucontrol
+		              pulseaudio
+		              pavucontrol
                       )
 
 software_list_yay=(discord
