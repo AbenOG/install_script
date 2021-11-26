@@ -137,9 +137,6 @@ else
   )
 fi
 
-
-
-
 # Desktop environment prompt
 # You can choose whether or not you want to install a DE (if none present)
 # 1 = Install DE
@@ -162,19 +159,19 @@ then
 
             1)
             printf "\nInstalling Gnome Desktop...\n" # Installs GNOME DE & some needed packages
-            sudo pacman -S gnome xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
+            sudo pacman -S gnome xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel --needed --noconfirm
             sudo systemctl enable gdm.service
             ;;
 	
  	    2)
             printf "\nInstalling Plasma Desktop...\n" # Installs KDE Plasma DE & some needed packages
-            sudo pacman -S plasma kde-applications plasma-wayland-session plasma-wayland-protocols xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel --noconfirm
+            sudo pacman -S plasma kde-applications plasma-wayland-session plasma-wayland-protocols xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel --needed --noconfirm
             sudo systemctl enable sddm.service
             ;;
 	
             3)
             printf "\nInstalling XFCE desktop...\n" # Installs XFCE4 DE & some needed packages
-            sudo pacman -S xfce4 xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel sddm --noconfirm
+            sudo pacman -S xfce4 xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel sddm --needed --noconfirm
             sudo systemctl enable sddm.service
             ;;
             
