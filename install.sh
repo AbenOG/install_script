@@ -158,8 +158,8 @@ then
 	
             3)
             printf "\nInstalling XFCE desktop...\n" # Installs XFCE4 DE & some needed packages
-            sudo pacman -S xfce4 xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel lightdm --noconfirm
-            sudo systemctl enable lightdm.service
+            sudo pacman -S xfce4 xorg xorg-apps xorg-drivers xorg-server xorg-xkill xorg-xinit xterm xf86-video-vesa xf86-video-fbdev xf86-video-intel sddm --noconfirm
+            sudo systemctl enable sddm.service
             ;;
             
 	    *)
