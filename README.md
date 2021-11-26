@@ -47,6 +47,7 @@ What does it do?
     32. Code (Microsoft Visual studio code) - https://code.visualstudio.com/
     33. Gimp (GNU Image Manipulation Program) - https://www.gimp.org/
     34. Atom (Free and open-source text and source code editor) - https://atom.io/
+    35. Common Java runtimes & Libs
 )
 
 # You can change the installation packages by editing the "install.sh" script file on < Line: 235 > for all pacman packages and < Line: 327 > for all yay packages
