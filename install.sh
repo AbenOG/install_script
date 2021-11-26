@@ -388,14 +388,14 @@ if [ ! "${toInstall_pac[@]}" ] # Installation script(pacman), checks if there ar
 then
 	printf "\nAll Pacman packages already installed.."
 else
-	sudo pacman -S "${toInstall_pac[@]}" --noconfirm
+	sudo pacman -S "${toInstall_pac[@]}" --needed --noconfirm
 fi
 
 if [ ! "${toInstall_yay[@]}" ] # Installation script(yay), checks if there are packages in the queue before proceeding to avoid unnecessary installations of existing packages..
 then
 	printf "\nAll Yay packages already installed..\n"
 else
-	yay -S "${toInstall_yay[@]}" --noconfirm
+	yay -S "${toInstall_yay[@]}" --needed --noconfirm
 fi
 
 # Enabling some services
