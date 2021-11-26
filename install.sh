@@ -246,6 +246,7 @@ if [ $gpu == 'VMware' ]; then printf "Running this through a virtualized environ
 # Conflicting packages will NOT be installed/removed by default, so don't worry about that.
 
 software_list_pacman=('xdg-desktop-portal'
+                      'net-tools'
                       'xorg'
                       'xorg-server'
                       'xorg-apps'
