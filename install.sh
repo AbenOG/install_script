@@ -123,6 +123,22 @@ else
   )
 fi
 
+# Installing MS clear type fonts for some software that require it.
+if pacman -Qs ttf-ms-fonts > /dev/null
+then
+  echo "Microsoft Clear Type Fonts are already installed.. Skipping"
+else
+  sudo pacman -S git --noconfirm
+  cd /home/$USER/git || exit
+  (
+  git clone https://aur.archlinux.org/ttf-ms-fonts.git
+  cd ttf-ms-fonts || exit
+  makepkg -si
+  )
+fi
+
+
+
 
 # Desktop environment prompt
 # You can choose whether or not you want to install a DE (if none present)
