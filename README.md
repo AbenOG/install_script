@@ -3,7 +3,7 @@ Hello and welcome!
 # Aben's Arch post installation script
 Installs most common software and needed drivers so you are up and running with a single click!
 
-Tested on Garuda, EndeavourOS, Vanilla arch, Working 100%
+Tested on Garuda, EndeavourOS, Vanilla Arch, Working 100%
 
 
 # What does it do? 
