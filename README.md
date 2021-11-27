@@ -53,11 +53,16 @@ Tested on Garuda, EndeavourOS, Vanilla arch, Working 100%
 <br>and < Line: 327 > for all yay packages**
 
 # How to install?
-1. git clone https://github.com/AbenOG/install_script.git
-2. cd install_script
-3. chmod +x install.sh
-4. ./install.sh
-5. done!
+<pre>
+<code>
+   git clone https://github.com/AbenOG/install_script.git
+   cd install_script
+   chmod +x install.sh
+   ./install.sh
+</code>
+</pre>
 
-You are more than welcome to dig in and contribute to this project, don't be a stranger!
+------------------------------------------------------------------------------------------------------------------------------
+
+You are more than welcome to dig in and contribute to this project, don't be a stranger! 
 More features to come soon!
