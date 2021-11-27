@@ -53,6 +53,12 @@ What does it do?
 
 # You can change the installation packages by editing the "install.sh" script file on < Line: 235 > for all pacman packages and < Line: 327 > for all yay packages
 
+# How to install?
+1. git clone https://github.com/AbenOG/install_script.git
+2. cd install_script
+3. chmod +x install.sh
+4. ./install.sh
+5. done!
 
 # You are more than welcome to dig in and contribute to this project, don't be a stranger!
 # More features to come soon!
