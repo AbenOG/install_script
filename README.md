@@ -24,7 +24,7 @@ Tested on Garuda, EndeavourOS, Vanilla Arch, Working 100% ( sat 27 nov 2021 )
    10. Alacritty (terminal emulator) - https://alacritty.org/
    11. OBS-Studio (Open Streaming & Recording platform) - https://obsproject.com/
    12. gparted (partition editing platform) - https://gparted.org/
-   13. Steam (Gaming platform) - https://steampowered.com # REMOVED FOR NOW DUE TO A BUG WHERE YOU HAVE TO CHOOSE DRIVERS IN VANILLA ARCH.
+   13. Steam (Gaming platform) - https://steampowered.com ( Removed for now due to some issues )
    14. Bitwarden (Open Password manager) - https://bitwarden.com
    15. git - https://github.com
    16. kdenlive (Libre video editor) - https://kdenlive.org/en/
