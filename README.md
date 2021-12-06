@@ -2,7 +2,7 @@ Hello and welcome!
 
 # Aben's Arch post installation script
 Installs most common software and needed drivers so you are up and running with a single click!
-NOTE: This is meant for AMD64 systems, if you are using a different CPU architecture it's recommended you modify the install file first!~
+<br>NOTE: This is meant for AMD64 systems, if you are using a different CPU architecture it's recommended you modify the install file first!~
 
 Tested on Garuda, EndeavourOS, Vanilla Arch, Working 100% ( sat 27 nov 2021 )
 
