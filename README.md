@@ -5,12 +5,15 @@ Installs most common software and needed drivers so you are up and running with 
 
 Tested on Garuda, EndeavourOS, Vanilla Arch, Working 100% ( sat 27 nov 2021 )
 
+# What's new? - 12.6.21
+1. Added CPU autodetection & ucode install.
+
 
 # What does it do? 
 
 1. Updates the system
 2. (Optional) Installs the desktop environment of your choosing followed by all required packages.
-3. Autodetects your GPU and installs the drivers necessary for your system.
+3. Autodetects your computers hardware specs and installs the appropriate drivers.
 # The following software/driver & utils are installed.
    1. Mesa - https://mesa3d.org/
    2. OpenCL libs for MESA
