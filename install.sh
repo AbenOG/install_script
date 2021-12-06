@@ -81,7 +81,8 @@ install_driver () { # This function collects the GPU detection information gathe
         printf "\npackages queued -> %s" "${queue[@]}"
     fi
 } #                             ==================================================== END OF FUNC ==================================================
-
+#                               ~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~!~
+#                               ================================================== < Preparations > ===============================================
 
 # First let's make sure the end-user is running Arch / Arch based distro
 if test -f "/etc/pacman.conf" 
@@ -136,6 +137,22 @@ else
   makepkg -si
   )
 fi
+
+# Detects & Installs CPU Microcode update files.
+if [ "cat /proc/cpuinfo | grep 'GenuineIntel'" ]
+then
+    echo "Intel CPU detected."
+    sudo pacman -S intel-ucode --needed --noconfirm
+elif [ "cat /proc/cpuinfo | grep 'AuthenticAMD'" ]
+then
+    echo "AMD CPU Detected."
+    sudo pacman -S amd-ucode --needed --noconfirm
+else
+    echo "No CPU detected, this script is only supporting AMD64 based CPU's at the moment."
+fi
+
+#                               ================================================== </ Preparations > ===============================================
+
 
 # Desktop environment prompt
 # You can choose whether or not you want to install a DE (if none present)
