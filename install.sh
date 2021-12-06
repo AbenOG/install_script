@@ -141,12 +141,16 @@ fi
 # Detects & Installs CPU Microcode update files.
 if [ "cat /proc/cpuinfo | grep 'GenuineIntel'" ]
 then
-    echo "Intel CPU detected."
+    printf "\nIntel CPU detected.\n"
+    
     sudo pacman -S intel-ucode --needed --noconfirm
+
 elif [ "cat /proc/cpuinfo | grep 'AuthenticAMD'" ]
 then
-    echo "AMD CPU Detected."
+    printf "\nAMD CPU Detected.\n"
+    
     sudo pacman -S amd-ucode --needed --noconfirm
+
 else
     echo "No CPU detected, this script is only supporting AMD64 based CPU's at the moment."
 fi
