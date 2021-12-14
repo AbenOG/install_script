@@ -492,7 +492,7 @@ source .bashrc
 
 if [ ! -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" ]
 then
-    mkdir "/home/$USER/.local/share/Steam/compatibilitytools.d/"
+    mkdir -p "/home/$USER/.local/share/Steam/compatibilitytools.d/"
     protonup -d "/home/$USER/.local/share/Steam/compatibilitytools.d/" # This sets the default download destination for GE-Proton when using 'protonup' command
 
 else
