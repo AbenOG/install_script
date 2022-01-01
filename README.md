@@ -5,6 +5,9 @@ Installs most common software and needed drivers so you are up and running with 
 <br>!!!
 <br><b>NOTE: This is meant for AMD64 systems, if you are using a different CPU architecture it's recommended to modify the install script for your appropriate system first.</b>
 <br>!!!
+<br>!!!
+<br><b>NOTE 2.0: !!!! This only works with systemd. !!!!</b>
+<br>!!!
 
 Tested on Garuda, EndeavourOS, Vanilla Arch, Working 100% ( sat 27 nov 2021 )
 
