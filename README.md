@@ -1,6 +1,6 @@
 Hello and welcome!
 
-# Aben's Arch post installation script
+# Arch post installation script
 Installs most common software and needed drivers so you are up and running with a single click!
 <br>!!!
 <br><b>NOTE: This is meant for AMD64 systems, if you are using a different CPU architecture it's recommended to modify the install script for your appropriate system first.</b>
